@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Research Agent</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>AI Research Agent</h1>
+            <p class="subtitle">AI-powered research intelligence dashboard</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- Stats Bar -->
+        <section class="stats-bar" id="stats-bar">
+            <div class="stat-card">
+                <span class="stat-number" id="stat-tools">-</span>
+                <span class="stat-label">AI Tools</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="stat-posts">-</span>
+                <span class="stat-label">Community Posts</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="stat-news">-</span>
+                <span class="stat-label">News Items</span>
+            </div>
+            <div class="stat-card accent">
+                <span class="stat-number" id="stat-total">-</span>
+                <span class="stat-label">Total</span>
+            </div>
+        </section>
+
+        <!-- Collect Actions -->
+        <section class="actions">
+            <h2>Collect Data</h2>
+            <div class="action-buttons">
+                <button onclick="collect('github')" id="btn-github">GitHub Repos</button>
+                <button onclick="collect('hackernews')" id="btn-hackernews">Hacker News</button>
+                <button onclick="collect('reddit')" id="btn-reddit">Reddit Posts</button>
+                <button onclick="collect('all')" id="btn-all" class="btn-primary">Collect All</button>
+            </div>
+            <div id="collect-status" class="status-message"></div>
+        </section>
+
+        <!-- Tabs -->
+        <nav class="tabs">
+            <button class="tab active" onclick="switchTab('tools')">AI Tools</button>
+            <button class="tab" onclick="switchTab('posts')">Community Posts</button>
+            <button class="tab" onclick="switchTab('report')">Report</button>
+        </nav>
+
+        <!-- Tools Tab -->
+        <section id="tab-tools" class="tab-content active">
+            <div class="table-wrapper">
+                <table id="tools-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Stars</th>
+                            <th>Language</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <p class="empty-state" id="tools-empty">No tools collected yet. Click "GitHub Repos" to start collecting.</p>
+        </section>
+
+        <!-- Posts Tab -->
+        <section id="tab-posts" class="tab-content">
+            <div class="table-wrapper">
+                <table id="posts-table">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Source</th>
+                            <th>Score</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <p class="empty-state" id="posts-empty">No posts collected yet. Click "Hacker News" or "Reddit Posts" to start.</p>
+        </section>
+
+        <!-- Report Tab -->
+        <section id="tab-report" class="tab-content">
+            <button onclick="generateReport()" id="btn-report">Generate Report</button>
+            <pre id="report-content" class="report-box">Click "Generate Report" to create an AI analysis of collected data.</pre>
+        </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
