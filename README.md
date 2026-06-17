@@ -80,6 +80,25 @@ python test_report.py
 
 This project uses a `.env` file for API keys and credentials. **Never commit your `.env` file** — it is already excluded via `.gitignore`.
 
+## 🖼️ Screenshots
+
+### AI Tools List
+![AI Tools List](public/ai_tools_list.png)
+
+### Collection
+![Collection](public/collection.png)
+
+### Community Posts
+![Community Posts](public/community_post_list.png)
+
+### Data
+![Data](public/data.png)
+
+### Reports
+![Reports](public/reports_list.png)
+
+---
+
 ## 📄 License
 
 This project is for personal/educational use.
